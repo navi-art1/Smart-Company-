@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, Image, Button, Alert, TouchableOpacity , Section} from 'react-native';
+import { StyleSheet, Text, View, Image, Button, Alert, TouchableOpacity , Section, TextInput} from 'react-native';
 import Smart from './assets/SmartCompany.png';
 import Micro from './assets/Micro.png';
 import Huella from './assets/Huella.png';
@@ -18,38 +18,26 @@ export default function App() {
     
       <Text  style={styles.titulo} >Bienvenido</Text>
 
-      <Text style={styles.texto}>Cantidad de Trabajadores: 4</Text>
-
       <Text style={styles.texto}> Fecha: 13/12/22 </Text>
 
-      <Text style={styles.texto}> Hora: 08:20 </Text>
+      <Text style={styles.texto }> Hora: 08:00 </Text>
 
-      <View style={styles.orden} >
+      <Text style={styles.subtitulo0}> Coloque sus </Text>
+      <Text style={styles.subtitulo}> Datos </Text>
 
-        <TouchableOpacity 
-        style={styles.iconButton}>
-        <Image style={styles.image}
-                source={Micro}
-              />
-        </TouchableOpacity>
+      <TextInput  style={styles.TextInput}
+        placeholder='Nombre'></TextInput>
 
-        <TouchableOpacity 
-        style={styles.iconButton}>
-        <Image style={styles.image}
-                source={Huella}
-              />
-      </TouchableOpacity>
+      <TextInput  style={styles.TextInput}
+        placeholder='Apellido'></TextInput>
 
-
-      </View>
-
-
-
-
+      <TextInput  style={styles.TextInput}
+      secureTextEntry={true}
+       placeholder='Constraseña'></TextInput>
 
       <TouchableOpacity  
        style={styles.button}>
-        <Text style={styles.textButton}>Forma Manual</Text>
+        <Text style={styles.textButton}>Marcar</Text>
       </TouchableOpacity>
 
 
@@ -62,7 +50,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#f1f1f1',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -72,6 +60,26 @@ const styles = StyleSheet.create({
     color: '#23254C',
     marginTop: 30
   },
+
+  subtitulo:{
+    fontSize: 24,
+    color: '#23254C',
+    textShadowColor: '#c1c1c1',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 10,
+  },
+
+  subtitulo0:{
+    marginTop: 28,
+    fontSize: 24,
+    color: '#23254C',
+    textShadowColor: '#c1c1c1',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 10
+  },
+
+
+
   texto:{
     color: '#23254C',
     fontSize: 20,
@@ -120,7 +128,17 @@ const styles = StyleSheet.create({
     width: 200,
     justifyContent: 'space-evenly',
     alignItems: 'center'
+  },
+
+  TextInput:{
+    padding: 6,
+    paddingStart: 20,
+    width: '60%',
+    marginTop: 20,
+    borderRadius: 30,
+    backgroundColor: '#ffffff'
   }
+
 
 
 });

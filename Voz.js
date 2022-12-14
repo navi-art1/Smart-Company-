@@ -18,11 +18,12 @@ export default function App() {
     
       <Text  style={styles.titulo} >Bienvenido</Text>
 
-      <Text style={styles.texto}>Cantidad de Trabajadores: 4</Text>
-
       <Text style={styles.texto}> Fecha: 13/12/22 </Text>
 
-      <Text style={styles.texto}> Hora: 08:20 </Text>
+      <Text style={styles.texto }> Hora: 08:00 </Text>
+
+      <Text style={styles.subtitulo0}> Mencione su </Text>
+      <Text style={styles.subtitulo}> Nombre </Text>
 
       <View style={styles.orden} >
 
@@ -33,25 +34,7 @@ export default function App() {
               />
         </TouchableOpacity>
 
-        <TouchableOpacity 
-        style={styles.iconButton}>
-        <Image style={styles.image}
-                source={Huella}
-              />
-      </TouchableOpacity>
-
-
       </View>
-
-
-
-
-
-      <TouchableOpacity  
-       style={styles.button}>
-        <Text style={styles.textButton}>Forma Manual</Text>
-      </TouchableOpacity>
-
 
       <StatusBar style="auto" />
 
@@ -72,6 +55,26 @@ const styles = StyleSheet.create({
     color: '#23254C',
     marginTop: 30
   },
+
+  subtitulo:{
+    fontSize: 24,
+    color: '#23254C',
+    textShadowColor: '#c1c1c1',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 10,
+  },
+
+  subtitulo0:{
+    marginTop: 28,
+    fontSize: 24,
+    color: '#23254C',
+    textShadowColor: '#c1c1c1',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 10
+  },
+
+
+
   texto:{
     color: '#23254C',
     fontSize: 20,
