@@ -1,13 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, Image, Button, Alert, TouchableOpacity , Section, TextInput, Share} from 'react-native';
-import Smart from './assets/SmartCompany.png';
-import Micro from './assets/Micro.png';
-import Huella from './assets/Huella.png';
+import Smart from '../assets/SmartCompany.png';
+import Micro from '../assets/Micro.png';
+import Huella from '../assets/Huella.png';
 
-import share from './assets/Share1.png';
+import share from '../assets/Share1.png';
 
-export default function App() {
+export default function Green() {
   return (
 
 
@@ -18,11 +18,11 @@ export default function App() {
               source={Smart}
             />
     
-      <Text  style={styles.titulo} >Bienvenido: Lucho</Text>
+      <Text  style={styles.titulo} >Bienvenido: Pedro</Text>
 
       <Text style={styles.texto}> Fecha: 13/12/22 </Text>
 
-      <Text style={styles.texto }> Hora de entrada: 08:40 </Text>
+      <Text style={styles.texto }> Hora de entrada: 08:00 </Text>
 
        <View style={styles.content}>
 
@@ -64,7 +64,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fe8887',
+    backgroundColor: '#dcedc9',
     alignItems: 'center',
     justifyContent: 'center',
   },

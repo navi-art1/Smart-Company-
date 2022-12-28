@@ -1,126 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
-import React, {useState} from 'react';
-import { StyleSheet, Text, View, Image, Button, Alert, TouchableOpacity , Section} from 'react-native';
-import Smart from './assets/SmartCompany.png';
-import Micro from './assets/Micro.png';
-import Huella from './assets/Huella.png';
+import { Button, StyleSheet } from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+//import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+//screnns
+
+import Huella from './screens/Huella';
+import Main from './screens/Main';
+import Manual from './screens/Manual';
+import Red from './screens/Red';
+import Voz from './screens/Voz';
+import yellow from './screens/yellow';
+import Green from './screens/Green';
+
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-
-
-
-    <View style={styles.container}>
-    
-      <Image style={styles.img}
-              source={Smart}
-            />
-    
-      <Text  style={styles.titulo} >Bienvenido</Text>
-
-      <Text style={styles.texto}>Cantidad de Trabajadores: 4</Text>
-
-      <Text style={styles.texto}> Fecha: 13/12/22 </Text>
-
-      <Text style={styles.texto}> Hora: 08:20 </Text>
-
-      <View style={styles.orden} >
-
-        <TouchableOpacity 
-        style={styles.iconButton}>
-        <Image style={styles.image}
-                source={Micro}
-              />
-        </TouchableOpacity>
-
-        <TouchableOpacity 
-        style={styles.iconButton}>
-        <Image style={styles.image}
-                source={Huella}
-              />
-      </TouchableOpacity>
-
-
-      </View>
-
-
-
-
-
-      <TouchableOpacity  
-       style={styles.button}>
-        <Text style={styles.textButton}>Forma Manual</Text>
-      </TouchableOpacity>
-
-
-      <StatusBar style="auto" />
-
-    </View>
+      <NavigationContainer >
+        <Drawer.Navigator useLegacyImplementation initialRouteName="Main">
+          <Drawer.Screen name="Main" component={Main} />
+          <Drawer.Screen name="Green" component={Green} />
+          <Drawer.Screen name="Huella" component={Huella} />
+          <Drawer.Screen name="Manual" component={Manual} />
+          <Drawer.Screen name="Red" component={Red} />
+          <Drawer.Screen name="Voz" component={Voz} />
+          <Drawer.Screen name="yellow" component={yellow} />
+        </Drawer.Navigator>
+      </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f5f5f5',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  img:{height:200 , width:200 , resizeMode: 'contain'},
-  titulo:{
-    fontSize: 30,
-    color: '#23254C',
-    marginTop: 30
-  },
-  texto:{
-    color: '#23254C',
-    fontSize: 20,
-    marginTop: 20,
-    textShadowColor: '#c1c1c1',
-    textShadowOffset: {width: -1, height: 1},
-    textShadowRadius: 10
-  },
-
-  button:{
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding : 10,
-    width: 200,
-    marginTop:20,
-    borderRadius:12,
-    backgroundColor :'#23254C',
-  },
-
-  textButton:{
-    color: '#ffffff',
-    fontWeight: 'bold'
-  },
-
-  image:{
-    height: 40,
-    width: 40,
-    resizeMode: 'contain'
-  },
-
-  iconButton:{
-    backgroundColor: '#23254C',
-    height : 60,
-    width: 60,
-    borderRadius:30,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-
-  orden:{
-    display:'flex',
-    flexDirection: 'row',
-    marginTop: 44,
-    marginBottom: 40,
-    width: 200,
-    justifyContent: 'space-evenly',
-    alignItems: 'center'
-  }
 
 
-});

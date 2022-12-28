@@ -1,11 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, Image, Button, Alert, TouchableOpacity , Section, TextInput} from 'react-native';
-import Smart from './assets/SmartCompany.png';
-import Micro from './assets/Micro.png';
-import Huella from './assets/Huella.png';
+import { StyleSheet, Text, View, Image, Button, Alert, TouchableOpacity , Section, TextInput, Share} from 'react-native';
+import Smart from '../assets/SmartCompany.png';
+import Micro from '../assets/Micro.png';
+import Huella from '../assets/Huella.png';
 
-export default function App() {
+import share from '../assets/Share1.png';
+
+export default function Red() {
   return (
 
 
@@ -16,28 +18,40 @@ export default function App() {
               source={Smart}
             />
     
-      <Text  style={styles.titulo} >Bienvenido</Text>
+      <Text  style={styles.titulo} >Bienvenido: Lucho</Text>
 
       <Text style={styles.texto}> Fecha: 13/12/22 </Text>
 
-      <Text style={styles.texto }> Hora: 08:00 </Text>
+      <Text style={styles.texto }> Hora de entrada: 08:40 </Text>
 
-      <Text style={styles.subtitulo0}> Coloque sus </Text>
-      <Text style={styles.subtitulo}> Datos </Text>
+       <View style={styles.content}>
 
-      <TextInput  style={styles.TextInput}
-        placeholder='Nombre'></TextInput>
+      <Text style={styles.textoContenido }> Vamos a alcanzar el bono</Text>
+      <Text style={styles.textoContenido }> de puntualidad,</Text>
+      <Text style={styles.textoContenido }> tú puedes.</Text>
 
-      <TextInput  style={styles.TextInput}
-        placeholder='Apellido'></TextInput>
 
-      <TextInput  style={styles.TextInput}
-      secureTextEntry={true}
-       placeholder='Constraseña'></TextInput>
+      <Text style={styles.texto }> Son necesarias 20</Text>
+      <Text style={styles.textoContenido }> asistencias puntuales para</Text>
+      <Text style={styles.textoContenido }> acceder al bono</Text>
+      </View>
+
+
+
+      <Text style={styles.texto }> Asistencias puntuales: 3</Text>
+
+     
+      <TouchableOpacity 
+        style={styles.iconShare}>
+        <Image style={styles.image}
+                source={share}
+              />
+        </TouchableOpacity>
+
 
       <TouchableOpacity  
        style={styles.button}>
-        <Text style={styles.textButton}>Marcar</Text>
+        <Text style={styles.textButton}>Atras</Text>
       </TouchableOpacity>
 
 
@@ -50,7 +64,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f1f1f1',
+    backgroundColor: '#fe8887',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -89,6 +103,16 @@ const styles = StyleSheet.create({
     textShadowRadius: 10
   },
 
+  textoContenido:{
+    color: '#23254C',
+    fontSize: 20,
+    textShadowColor: '#c1c1c1',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 10
+  },
+
+
+
   button:{
     alignItems: 'center',
     justifyContent: 'center',
@@ -105,8 +129,8 @@ const styles = StyleSheet.create({
   },
 
   image:{
-    height: 40,
-    width: 40,
+    height: 30,
+    width: 30,
     resizeMode: 'contain'
   },
 
@@ -117,8 +141,27 @@ const styles = StyleSheet.create({
     borderRadius:30,
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+
   },
+
+  iconShare:{
+    backgroundColor: '#23254C',
+    height : 60,
+    width: 60,
+    borderRadius:30,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingLeft: 4,
+    paddingBottom: 3,
+    marginTop: 20
+
+  },
+
+
+
+
 
   orden:{
     display:'flex',
@@ -137,6 +180,13 @@ const styles = StyleSheet.create({
     marginTop: 20,
     borderRadius: 30,
     backgroundColor: '#ffffff'
+  },
+
+  content:{
+    width: 300,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 30
   }
 
 

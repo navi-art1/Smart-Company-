@@ -1,13 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, Image, Button, Alert, TouchableOpacity , Section, TextInput, Share} from 'react-native';
-import Smart from './assets/SmartCompany.png';
-import Micro from './assets/Micro.png';
-import Huella from './assets/Huella.png';
+import Smart from '../assets/SmartCompany.png';
+import Micro from '../assets/Micro.png';
+import Huella from '../assets/Huella.png';
 
-import share from './assets/Share1.png';
+import share from '../assets/Share1.png';
 
-export default function App() {
+export default function yellow() {
   return (
 
 
