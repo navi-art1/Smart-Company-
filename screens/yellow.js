@@ -24,7 +24,7 @@ export default function yellow() {
 
       <Text style={styles.texto }> Hora de entrada: 08:15 </Text>
 
-       <View style={styles.content}>
+      <View style={styles.content}>
 
       <Text style={styles.textoContenido }> Adelante, aún puedes alcanzar el</Text>
       <Text style={styles.textoContenido }> bono de puntualidad</Text>
@@ -40,7 +40,6 @@ export default function yellow() {
 
       <Text style={styles.texto }> Asistencias puntuales: 6</Text>
 
-     
       <TouchableOpacity 
         style={styles.iconShare}>
         <Image style={styles.image}

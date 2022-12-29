@@ -37,6 +37,7 @@ export default function Main() {
         </TouchableOpacity>
 
         <TouchableOpacity 
+        onPress={() => navigation.navigate("Huella")}
         style={styles.iconButton}>
         <Image style={styles.image}
                 source={Huella}
@@ -46,6 +47,7 @@ export default function Main() {
       </View>
 
       <TouchableOpacity  
+        onPress={() => navigation.navigate("Manual")}
         style={styles.button}>
         <Text style={styles.textButton}>Forma Manual</Text>
       </TouchableOpacity>
