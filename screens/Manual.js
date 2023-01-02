@@ -33,7 +33,7 @@ export default function Manual() {
 
       <TextInput  style={styles.TextInput}
       secureTextEntry={true}
-       placeholder='Constraseña'></TextInput>
+       placeholder='Contraseña'></TextInput>
 
       <TouchableOpacity  
        style={styles.button}>

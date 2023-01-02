@@ -7,10 +7,8 @@ import Huella from '../assets/Huella.png';
 
 import share from '../assets/Share1.png';
 
-export default function yellow() {
+export default function Yellow() {
   return (
-
-
 
     <View style={styles.container}>
     
