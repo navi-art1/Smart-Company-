@@ -12,7 +12,7 @@ import Smart from "../assets/SmartCompany.png";
 
 import DateAndTime, { getTime, getDate } from "./DateAndTime";
 
-export default function Manual() {
+export default function Manual(props) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 

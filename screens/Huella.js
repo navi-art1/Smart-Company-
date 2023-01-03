@@ -6,7 +6,7 @@ import HuellaIcon from "../assets/Huella.png";
 
 import DateAndTime, { getTime, getDate } from "./DateAndTime";
 
-export default function Huella() {
+export default function Huella(props) {
   let time = "";
   return (
     <View style={styles.container}>

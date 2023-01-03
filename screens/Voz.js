@@ -26,7 +26,6 @@ export default function Voz(props) {
           onPress={() => {
             time = getTime();
             const [hours, minutes] = time.split(":");
-            hours = 7;
 
             if (hours < 7 || hours > 17) {
               alert(
@@ -39,19 +38,16 @@ export default function Voz(props) {
               props.navigation.navigate("Green", {
                 date: getDate(),
                 time: time,
-                name: results,
               });
             } else if (hours == 8 && minutes <= 15) {
               props.navigation.navigate("Yellow", {
                 date: getDate(),
                 time: time,
-                name: results,
               });
             } else {
               props.navigation.navigate("Red", {
                 date: getDate(),
                 time: time,
-                name: results,
               });
             }
           }}
