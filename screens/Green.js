@@ -1,56 +1,70 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  Button,
-  Alert,
-  TouchableOpacity,
-  Section,
-  TextInput,
-  Share,
-} from "react-native";
+import React, { useRef } from "react";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import Smart from "../assets/SmartCompany.png";
-import Micro from "../assets/Micro.png";
-import Huella from "../assets/Huella.png";
 
 import share from "../assets/Share1.png";
 
-export default function Green() {
+import * as Sharing from "expo-sharing";
+import ViewShot from "react-native-view-shot";
+
+export default function Green({ route }) {
+  const ref = useRef();
   return (
-    <View style={styles.container}>
-      <Image style={styles.img} source={Smart} />
+    <ViewShot
+      ref={ref}
+      options={{
+        fileName: "Captura_de_pantalla",
+        format: "jpg",
+        quality: 1,
+      }}
+      style={styles.container}
+    >
+      <View>
+        <Image style={styles.img} source={Smart} />
 
-      <Text style={styles.titulo}>Bienvenido: Pedro</Text>
+        <Text style={styles.titulo}>Bienvenido: Pedro</Text>
 
-      <Text style={styles.texto}> Fecha: 13/12/22 </Text>
+        <Text style={styles.texto}> Fecha: {route.params.date} </Text>
 
-      <Text style={styles.texto}> Hora de entrada: 08:00 </Text>
+        <Text style={styles.texto}> Hora de entrada: {route.params.time} </Text>
 
-      <View style={styles.content}>
-        <Text style={styles.textoContenido}> Felicidades estas cada</Text>
-        <Text style={styles.textoContenido}> vez más cerca del bono</Text>
-        <Text style={styles.textoContenido}> de puntualidad</Text>
+        <TouchableOpacity
+          style={styles.iconShare}
+          onPress={() => {
+            ref.current.capture().then(async (uri) => {
+              console.log(uri);
+              if (!(await Sharing.isAvailableAsync())) {
+                alert("La imagen no está disponible");
+                return;
+              }
 
-        <Text style={styles.texto}> Son necesarias 20</Text>
-        <Text style={styles.textoContenido}> asistencias puntuales para</Text>
-        <Text style={styles.textoContenido}> acceder al bono</Text>
+              await Sharing.shareAsync(uri);
+            });
+          }}
+        >
+          <Image style={styles.image} source={share} />
+        </TouchableOpacity>
+
+        <View style={styles.content}>
+          <Text style={styles.textoContenido}> Felicidades estas cada</Text>
+          <Text style={styles.textoContenido}> vez más cerca del bono</Text>
+          <Text style={styles.textoContenido}> de puntualidad</Text>
+
+          <Text style={styles.texto}> Son necesarias 20</Text>
+          <Text style={styles.textoContenido}> asistencias puntuales para</Text>
+          <Text style={styles.textoContenido}> acceder al bono</Text>
+        </View>
+
+        <Text style={styles.texto}> Asistencias puntuales: 6</Text>
+
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.textButton}>Atras</Text>
+        </TouchableOpacity>
+
+        <StatusBar style="auto" />
       </View>
-
-      <Text style={styles.texto}> Asistencias puntuales: 6</Text>
-
-      <TouchableOpacity style={styles.iconShare}>
-        <Image style={styles.image} source={share} />
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.textButton}>Atras</Text>
-      </TouchableOpacity>
-
-      <StatusBar style="auto" />
-    </View>
+    </ViewShot>
   );
 }
 
